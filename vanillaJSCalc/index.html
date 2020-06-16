@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Frannie's Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="container">
+        <input class="item calculatorDisplay" type="text" />
+        <button class="item" value="1" onClick="setInput(value)" id="number1">
+          1
+        </button>
+        <button class="item" value="2" onClick="setInput(value)" id="number2">
+          2
+        </button>
+        <button class="item" value="3" onClick="setInput(value)" id="number3">
+          3
+        </button>
+        <button class="item" value="+" onClick="setInput(value)" id="add">
+          +
+        </button>
+        <button class="item" value="4" onClick="setInput(value)" id="number4">
+          4
+        </button>
+        <button class="item" value="5" onClick="setInput(value)" id="number5">
+          5
+        </button>
+        <button class="item" value="6" onClick="setInput(value)" id="number6">
+          6
+        </button>
+        <button class="item" value="-" onClick="setInput(value)" id="subtract">
+          -
+        </button>
+        <button class="item" value="7" onClick="setInput(value)" id="number7">
+          7
+        </button>
+        <button class="item" value="8" onClick="setInput(value)" id="number8">
+          8
+        </button>
+        <button class="item" value="9" onClick="setInput(value)" id="number9">
+          9
+        </button>
+        <button class="item" value="/" onClick="setInput(value)" id="divide">
+          /
+        </button>
+        <button class="item" value="0" onClick="setInput(value)" id="number0">
+          0
+        </button>
+        <button class="item" value="C" onClick="setInput(value)" id="clear">
+          C
+        </button>
+        <button class="item" value="" onClick="setInput(value)" id="equals">
+          =
+        </button>
+        <button class="item" value="" onClick="setInput(value)" id="multiply">
+          *
+        </button>
+      </div>
+    </div>
+
+    <style>
+      body {
+        margin: 100px;
+      }
+      .calculator {
+        max-width: 600px;
+      }
+      .container {
+        text-align: center;
+        display: grid;
+        height: 600px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .calculatorDisplay {
+        grid-column: 1 / -1;
+      }
+    </style>
+  </body>
+</html>
