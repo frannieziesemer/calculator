@@ -10,53 +10,121 @@
   <body>
     <div class="calculator">
       <div class="container">
-        <input class="item calculatorDisplay" type="text" />
+        <div class="item calculatorDisplay" id="display">0</div>
         <button class="item" value="1" onClick="setInput(value)" id="number1">
           1
         </button>
         <button class="item" value="2" onClick="setInput(value)" id="number2">
           2
         </button>
-        <button class="item" value="3" onClick="setInput(value)" id="number3">
+        <button
+          class="item"
+          type="button"
+          value="3"
+          onClick="setInput(value)"
+          id="number3"
+        >
           3
         </button>
-        <button class="item" value="+" onClick="setInput(value)" id="add">
+        <button
+          class="item"
+          type="button"
+          onClick="add(input1, input2)"
+          id="add"
+        >
           +
         </button>
-        <button class="item" value="4" onClick="setInput(value)" id="number4">
+        <button
+          class="item"
+          type="button"
+          value="4"
+          onClick="setInput(value)"
+          id="number4"
+        >
           4
         </button>
-        <button class="item" value="5" onClick="setInput(value)" id="number5">
+        <button
+          class="item"
+          type="button"
+          value="5"
+          onClick="setInput(value)"
+          id="number5"
+        >
           5
         </button>
-        <button class="item" value="6" onClick="setInput(value)" id="number6">
+        <button
+          class="item"
+          type="button"
+          value="6"
+          onClick="setInput(input1, input2);
+          id="number6"
+        >
           6
         </button>
-        <button class="item" value="-" onClick="setInput(value)" id="subtract">
+        <button
+          class="item"
+          type="button"
+          onClick="subtract(input1, input2)"
+          id="subtract"
+        >
           -
         </button>
-        <button class="item" value="7" onClick="setInput(value)" id="number7">
+        <button
+          class="item"
+          type="button"
+          value="7"
+          onClick="setInput(value)"
+          id="number7"
+        >
           7
         </button>
-        <button class="item" value="8" onClick="setInput(value)" id="number8">
+        <button
+          class="item"
+          type="button"
+          value="8"
+          onClick="setInput(value)"
+          id="number8"
+        >
           8
         </button>
-        <button class="item" value="9" onClick="setInput(value)" id="number9">
+        <button
+          class="item"
+          type="button"
+          value="9"
+          onClick="setInput(value)"
+          id="number9"
+        >
           9
         </button>
-        <button class="item" value="/" onClick="setInput(value)" id="divide">
+        <button
+          class="item"
+          type="button"
+          onClick="divide(input1, input2)"
+          id="divide"
+        >
           /
         </button>
-        <button class="item" value="0" onClick="setInput(value)" id="number0">
+        <button
+          class="item"
+          type="button"
+          value="0"
+          onClick="setInput(value)"
+          id="number0"
+        >
           0
         </button>
-        <button class="item" value="C" onClick="setInput(value)" id="clear">
+        <button class="item" type="button" onClick="clearDisplay()" id="clear">
           C
         </button>
-        <button class="item" value="" onClick="setInput(value)" id="equals">
+        <button class="item" type="button" onClick="calculate()" id="equals">
           =
         </button>
-        <button class="item" value="" onClick="setInput(value)" id="multiply">
+        <button
+          class="item"
+          type="button"
+          onClick="multiply(input1, input2)"
+          id="multiply"
+        >
           *
         </button>
       </div>
@@ -68,6 +136,7 @@
       }
       .calculator {
         max-width: 600px;
+        max-height: 300px;
       }
       .container {
         text-align: center;
