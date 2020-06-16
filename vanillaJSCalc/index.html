@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <script src="script.js"></script>
     <title>Frannie's Calculator</title>
   </head>
@@ -11,14 +15,24 @@
     <div class="calculator">
       <div class="container">
         <div class="item calculatorDisplay" id="display">0</div>
-        <button class="item" value="1" onClick="setInput(value)" id="number1">
+        <button
+          class="item number"
+          value="1"
+          onClick="setInput(value)"
+          id="number1"
+        >
           1
         </button>
-        <button class="item" value="2" onClick="setInput(value)" id="number2">
+        <button
+          class="item number"
+          value="2"
+          onClick="setInput(value)"
+          id="number2"
+        >
           2
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="3"
           onClick="setInput(value)"
@@ -27,7 +41,7 @@
           3
         </button>
         <button
-          class="item"
+          class="item operator"
           type="button"
           onClick="add(input1, input2)"
           id="add"
@@ -35,7 +49,7 @@
           +
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="4"
           onClick="setInput(value)"
@@ -44,7 +58,7 @@
           4
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="5"
           onClick="setInput(value)"
@@ -53,16 +67,16 @@
           5
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="6"
-          onClick="setInput(input1, input2);
+          onClick="setInput(value)"
           id="number6"
         >
           6
         </button>
         <button
-          class="item"
+          class="item operator"
           type="button"
           onClick="subtract(input1, input2)"
           id="subtract"
@@ -70,7 +84,7 @@
           -
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="7"
           onClick="setInput(value)"
@@ -79,7 +93,7 @@
           7
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="8"
           onClick="setInput(value)"
@@ -88,7 +102,7 @@
           8
         </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="9"
           onClick="setInput(value)"
@@ -97,15 +111,18 @@
           9
         </button>
         <button
-          class="item"
+          class="item operator"
           type="button"
           onClick="divide(input1, input2)"
           id="divide"
         >
           /
         </button>
+        <button class="item" type="button" onClick="clearDisplay()" id="clear">
+          C
+        </button>
         <button
-          class="item"
+          class="item number"
           type="button"
           value="0"
           onClick="setInput(value)"
@@ -113,14 +130,17 @@
         >
           0
         </button>
-        <button class="item" type="button" onClick="clearDisplay()" id="clear">
-          C
-        </button>
-        <button class="item" type="button" onClick="calculate()" id="equals">
+
+        <button
+          class="item operator"
+          type="button"
+          onClick="calculate()"
+          id="equals"
+        >
           =
         </button>
         <button
-          class="item"
+          class="item operator"
           type="button"
           onClick="multiply(input1, input2)"
           id="multiply"
@@ -130,25 +150,6 @@
       </div>
     </div>
 
-    <style>
-      body {
-        margin: 100px;
-      }
-      .calculator {
-        max-width: 600px;
-        max-height: 300px;
-      }
-      .container {
-        text-align: center;
-        display: grid;
-        height: 600px;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 10px;
-      }
-      .calculatorDisplay {
-        grid-column: 1 / -1;
-      }
-    </style>
+    <style></style>
   </body>
 </html>
