@@ -3,48 +3,54 @@ let input2;
 
 let operator;
 
+//display values 
+const displayInput = value => {
+  document.getElementById('display').innerHTML = value;
+}
+ 
 //define a function to set input as value 
 const setInput = (value) => {
   //if else statement to take second value 
   if (input1) {
     input2 = Number(value);
-    document.getElementById('display').innerHTML = input2;
+    // document.getElementById('display').innerHTML = input2;
   } else {
     input1 = Number(value);
-    document.getElementById('display').innerHTML = input1;
+    // document.getElementById('display').innerHTML = input1;
   }
 }
 //define function to clear input values after each calculation
 const clear = () => {
   input1 = undefined;
   input2 = undefined;
+  operator = undefined;
 
 }
 
 
 //define operator functions
-const add = (a, b) => {
+export const add = (a, b) => {
   operator = 'addition';
-  document.getElementById('display').innerHTML = '+';
   return a + b;
 }
 
-const subtract = (a, b) => {
+export const subtract = (a, b) => {
   operator = 'subtract';
-  document.getElementById('display').innerHTML = '-';
   return a - b;
 }
 
-const multiply = (a, b) => {
+export const multiply = (a, b) => {
   operator = 'multiply';
-  document.getElementById('display').innerHTML = 'x';
   return a * b;
 }
 
-const divide = (a, b) => {
+export const divide = (a, b) => {
   operator = 'divide';
-  document.getElementById('display').innerHTML = '/';
+  if (b == 0) {
+    return document.getElementById('display').innerHTML = 'Cannot divide by 0';
+  }
   return a / b;
+
 }
 
 const calculate = () => {
@@ -61,7 +67,7 @@ const calculate = () => {
     case 'divide': document.getElementById('display').innerHTML = divide(input1, input2);
       clear();
       break;
-    default: document.getElementById('display').innerHTML = divide(input1, input2) = 'err';
+      default: document.getElementById('display').innerHTML = 'err';
       break;
   }
   

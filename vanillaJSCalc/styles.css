@@ -2,6 +2,11 @@ body {
   margin: 50px;
   background-color: lightgray;
 }
+h1 {
+  font-size: 28px;
+  text-align: center;
+  padding: 20px;
+}
 body,
 button {
   font-size: 28px;
@@ -27,6 +32,7 @@ button {
   border-radius: 20px;
   box-shadow: 5px 5px 5px lightslategray;
   max-width: 300px;
+  margin: 0px auto;
 }
 .container {
   text-align: center;
@@ -44,4 +50,5 @@ button {
   background-color: whitesmoke;
   text-align: right;
   padding-right: 15px;
+  line-height: 40px;
 }

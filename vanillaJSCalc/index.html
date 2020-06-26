@@ -12,13 +12,14 @@
     <title>Frannie's Calculator</title>
   </head>
   <body>
+    <h1>Vanilla JavaScript Calculator</h1>
     <div class="calculator">
       <div class="container">
         <div class="item calculatorDisplay" id="display">0</div>
         <button
           class="item number"
           value="1"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number1"
         >
           1
@@ -26,7 +27,7 @@
         <button
           class="item number"
           value="2"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number2"
         >
           2
@@ -35,7 +36,7 @@
           class="item number"
           type="button"
           value="3"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number3"
         >
           3
@@ -43,8 +44,9 @@
         <button
           class="item operator"
           type="button"
-          onClick="add(input1, input2)"
+          onClick="displayInput(value); add(input1, input2)"
           id="add"
+          value="+"
         >
           +
         </button>
@@ -52,7 +54,7 @@
           class="item number"
           type="button"
           value="4"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number4"
         >
           4
@@ -61,7 +63,7 @@
           class="item number"
           type="button"
           value="5"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number5"
         >
           5
@@ -70,7 +72,7 @@
           class="item number"
           type="button"
           value="6"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number6"
         >
           6
@@ -78,8 +80,9 @@
         <button
           class="item operator"
           type="button"
-          onClick="subtract(input1, input2)"
+          onClick="displayInput(value); subtract(input1, input2)"
           id="subtract"
+          value="-"
         >
           -
         </button>
@@ -87,7 +90,7 @@
           class="item number"
           type="button"
           value="7"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number7"
         >
           7
@@ -96,7 +99,7 @@
           class="item number"
           type="button"
           value="8"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number8"
         >
           8
@@ -105,7 +108,7 @@
           class="item number"
           type="button"
           value="9"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number9"
         >
           9
@@ -113,8 +116,9 @@
         <button
           class="item operator"
           type="button"
-          onClick="divide(input1, input2)"
+          onClick="displayInput(value); divide(input1, input2)"
           id="divide"
+          value="/"
         >
           /
         </button>
@@ -125,7 +129,7 @@
           class="item number"
           type="button"
           value="0"
-          onClick="setInput(value)"
+          onClick="displayInput(value); setInput(value)"
           id="number0"
         >
           0
@@ -134,16 +138,18 @@
         <button
           class="item operator"
           type="button"
-          onClick="calculate()"
+          onClick="displayInput(value); calculate()"
           id="equals"
+          value="="
         >
           =
         </button>
         <button
           class="item operator"
           type="button"
-          onClick="multiply(input1, input2)"
+          onClick="displayInput(value); multiply(input1, input2)"
           id="multiply"
+          value="x"
         >
           *
         </button>
