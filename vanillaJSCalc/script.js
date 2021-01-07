@@ -1,50 +1,75 @@
-let input1;
-let input2;
-
+let input1; //prevVal ??
+let input2; //newVal??
+let result;
 let operator;
+console.log('it works');
 
-//display values 
+// display values 
 const displayInput = value => {
   document.getElementById('display').innerHTML = value;
+  console.log(`you clicked ${value}`);  
 }
- 
+
+
 //define a function to set input as value 
-const setInput = (value) => {
-  //if else statement to take second value 
+// const setInput = value => {
   if (input1) {
     input2 = Number(value);
-    // document.getElementById('display').innerHTML = input2;
+    
+    console.log(input2);
   } else {
     input1 = Number(value);
-    // document.getElementById('display').innerHTML = input1;
+    
+    console.log(input1);
   }
+
 }
+    // if there is no operator, then add value to input 1
+//     if (!operator) {
+      
+      
+//       displayInput(input1);
+//       console.log(input1);
+      
+//     }
+//     input2 = Number(value);
+//     document.getElementById('display').innerHTML = twoDigitInput;
+//   } else {
+//     input1 = Number(value);
+
+//   }
+//   console.log(input2);
+  
+// };
+
+
 //define function to clear input values after each calculation
 const clear = () => {
-  input1 = undefined;
-  input2 = undefined;
-  operator = undefined;
-
+  input1 = null;
+  input2 = null;
+  operator = null;
+  result = null;
+  document.getElementById('display').innerHTML = 0;
 }
 
 
 //define operator functions
-export const add = (a, b) => {
+ const add = (a, b) => {
   operator = 'addition';
   return a + b;
 }
 
-export const subtract = (a, b) => {
+ const subtract = (a, b) => {
   operator = 'subtract';
   return a - b;
 }
 
-export const multiply = (a, b) => {
+ const multiply = (a, b) => {
   operator = 'multiply';
   return a * b;
 }
 
-export const divide = (a, b) => {
+ const divide = (a, b) => {
   operator = 'divide';
   if (b == 0) {
     return document.getElementById('display').innerHTML = 'Cannot divide by 0';
@@ -67,10 +92,11 @@ const calculate = () => {
     case 'divide': document.getElementById('display').innerHTML = divide(input1, input2);
       clear();
       break;
-      default: document.getElementById('display').innerHTML = 'err';
+    default: document.getElementById('display').innerHTML  = 'err';
       break;
   }
   
+ 
 }
 
 //define function for clear button 
