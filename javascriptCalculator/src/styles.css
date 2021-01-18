@@ -1,0 +1,27 @@
+
+    
+.calc-wrapper {
+    background: lightgray;
+    border: 1px solid black;
+    box-shadow: lightslategray;
+    padding: 10px;
+    margin: 20px auto;
+    width: 30%;
+    height: 300px;
+}
+.display {
+    background: white;
+    border: 2px solid black;
+    height: 30%;
+    text-align: right;
+}
+.buttons-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin-top: 20px;
+}
+button {
+    margin: 2px;
+
+}

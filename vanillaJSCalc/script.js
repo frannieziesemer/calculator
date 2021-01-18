@@ -12,7 +12,7 @@ const displayInput = value => {
 
 
 //define a function to set input as value 
-// const setInput = value => {
+ const setInput = value => {
   if (input1) {
     input2 = Number(value);
     
