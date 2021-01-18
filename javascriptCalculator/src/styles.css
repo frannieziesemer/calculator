@@ -1,13 +1,15 @@
-
+body {
+    font-family: monospace;
+}
     
 .calc-wrapper {
     background: lightgray;
     border: 1px solid black;
-    box-shadow: lightslategray;
+    box-shadow: 8px 8px 8px 1px rgba(0, 0, 255, .2);
     padding: 10px;
     margin: 20px auto;
     width: 30%;
-    height: 300px;
+    height: 400px;
 }
 .display {
     background: white;
@@ -22,6 +24,13 @@
     margin-top: 20px;
 }
 button {
+    font-family: monospace;
     margin: 2px;
+    border: 1px solid black;
+    height: 50px;
+    box-shadow: 2px 2px 3px 1px grey;
+}
 
+button:hover {
+    box-shadow: none;
 }
