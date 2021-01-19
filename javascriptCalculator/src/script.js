@@ -1,43 +1,52 @@
 console.log('it works');
 numbers = document.querySelectorAll('.number');
 display = document.querySelector('.display');
+userInputDisplay = document.querySelector('.upper-display');
+resultDisplay = document.querySelector('.lower-display');
 operators = document.querySelectorAll('.operator');
 equalsButton = document.getElementById('equals');
 clearButton = document.getElementById('clear');
 
 
 
-let input1;
-let input2;
+let input1 = 0;
+let input2 = 0;
 let operator;
+let operatorValue = 0;
 let result;
+let equalsPressed = false;
 
 const setInput = (value) => {
     console.log('current operator '+ operator);
-    if(input1) {
-        input2 = Number(value);
-        console.log(input2);
-    } else {
-        input1 = Number(value);
-        console.log(input1);
+    if(!operator) {
+        input1 += value; //add the next number to input one if more than single digit
+        input1 = Number(input1); //convert to number
+        userInputDisplay.innerHTML = input1; //display number
+        console.log(`input1 set inputfunction ${input1}`);
+    }  else {
+        input2 += value;
+        input2 = Number(input2);
+        userInputDisplay.innerHTML += input2; 
+        console.log(`input2 set inputfunction ${input2}`);
     }
 }
 
 const add = (a, b) => {
-   // operator = 'add';
     result = a + b;
-    console.log(result);
-    displayValue(result);
+    displayResult(result);
+    input1 = result;
+    console.log(`input one after calc ${input1}`);
 }
 const subtract = (a, b) => {
     result = a - b;
-    console.log(result);
-    displayValue(result);
+    displayResult(result);
+    input1 = result;
 }
 const multiply = (a, b) => {
     console.log(result);
     result = a * b;
-    displayValue(result);
+    displayResult(result);
+    input1 = result;
 }
 
 // function multiply (array) {
@@ -46,51 +55,52 @@ const multiply = (a, b) => {
 
 const divide = (a, b) => {
     if (b === 0) {
-        displayValue( 'cannot divide by zero');
+        displayResult( 'cannot divide by zero');
     } else {
         result = a / b;
         console.log(result);
-        displayValue(result);
+        displayResult(result);
+        input1 = result;        
     }
 }
 
-const displayValue = (value) => {
-    display.innerHTML = value;
+const displayResult = (value) => {
+    resultDisplay.innerHTML = value;
 }
 
 const setOperator = (operatorValue) => {
     operator = operatorValue;
-    console.log(operator + ' pressed');
+    userInputDisplay.innerHTML += ` ${operatorValue} `;
+    calculate();
+    operatorValue++;
+    console.log(operatorValue);
 }
 
 const reset = () => {
-    input1 = null;
-    input2 = null;
+    input1 = 0;
+    input2 = 0;
     result = null;
     operator = null;
 }
 
 const clearDisplay = () => {
     reset();
-    displayValue(0);
+    displayResult(' ');
+    userInputDisplay.innerHTML = '';
 }
 
 const calculate = () => {
     console.log('calculating..');
+    //equalsPressed = true;
     console.log(operator);
-    if (operator === 'add') {
-        console.log('adding');
+    if (operator === '+') {
         add(input1, input2);
-        reset();
-    } else if (operator === 'subtract') {
+    } else if (operator === '-') {
         subtract(input1, input2);
-        reset();
-    } else if(operator === 'multiply') {
+    } else if(operator === '*') {
         multiply(input1, input2);
-        reset();
-    } else if(operator === 'divide') {
+    } else if(operator === '/') {
         divide(input1, input2);
-        reset();
     } else {
         reset();
         return 'error';
@@ -101,15 +111,14 @@ const calculate = () => {
 //add event listener to numbers buttons 
 numbers.forEach(number => {
     number.addEventListener('click', event => {
-        displayValue(event.target.value);
         setInput(event.target.value);
     });
 }); 
 //add event listener to operator buttons
 operators.forEach(operator => {
     operator.addEventListener('click', event => {
-        displayValue(event.target.innerHTML);
         setOperator(event.target.value);
+
     })
 })
 
